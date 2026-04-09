@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurante Casarão – Bragança Paulista</title>
+<meta name="description" content="Restaurante Casarão em Bragança Paulista. Comida mineira no fogão a lenha, casarão histórico de 1922. Almoço e jantar. Buffet por quilo ou à vontade.">
+<meta property="og:title" content="Restaurante Casarão – Bragança Paulista">
+<meta property="og:description" content="Comida mineira no fogão a lenha em um casarão histórico de 1922. Almoço e jantar, buffet por quilo ou à vontade. Praça José Bonifácio, 110 – Centro.">
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#172415">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde:    #172415;
+    --verde2:   #2a4228;
+    --ouro:     #c8a84b;
+    --ouro2:    #e2c97a;
+    --creme:    #f4ede0;
+    --creme2:   #e6d8c4;
+    --marrom:   #4a2e12;
+    --marrom2:  #7a5230;
+    --off-white:#faf6ee;
+    --texto:    #261a0a;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background: var(--off-white);
+    color: var(--texto);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content:'';
+    position:fixed; inset:0; z-index:9999;
+    pointer-events:none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:200;
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: all 0.5s ease;
+  }
+  nav.solid {
+    background: rgba(23,36,21,0.97);
+    backdrop-filter: blur(12px);
+    padding: 0.9rem 4rem;
+    box-shadow: 0 1px 0 rgba(200,168,75,0.15);
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 700; font-style: italic;
+    color: var(--ouro); text-decoration: none; letter-spacing: 0.05em;
+  }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a {
+    color: var(--creme); text-decoration:none;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.25em; text-transform:uppercase;
+    opacity:0.7; transition: opacity 0.3s, color 0.3s;
+  }
+  .nav-links a:hover { opacity:1; color: var(--ouro); }
+
+  /* ── HERO ── */
+ .hero {
+  min-height: 100dvh;
+    background: var(--verde);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align:center; position:relative; overflow:hidden;
+    padding: 6rem 2rem 4rem;
+  }
+
+  /* Geometric ornament BG */
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 70% 60% at 15% 90%, rgba(200,168,75,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 85% 10%, rgba(42,66,40,0.6) 0%, transparent 55%);
+  }
+
+  .hero-lines {
+    position:absolute; inset:0; overflow:hidden; pointer-events:none;
+  }
+  .hero-lines svg { width:100%; height:100%; opacity:0.06; }
+
+  .hero-eyebrow {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.5em; text-transform:uppercase;
+    color: var(--ouro); opacity:0.85; position:relative;
+    margin-bottom: 2.5rem;
+    animation: fadeSlideDown 1s ease both;
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content:''; display:block; width:60px; height:1px;
+    background: linear-gradient(90deg, transparent, var(--ouro));
+  }
+  .hero-eyebrow::after { background: linear-gradient(90deg, var(--ouro), transparent); }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4.5rem, 12vw, 10rem);
+    font-weight: 300; line-height: 0.85;
+    color: var(--creme); letter-spacing: -0.01em;
+    position:relative; animation: fadeUp 1.2s ease 0.2s both;
+  }
+  .hero h1 strong {
+    display:block; font-weight:700; font-style:italic;
+    color: var(--ouro); font-size:1.1em;
+  }
+
+  .hero-tagline {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.3em; text-transform:uppercase;
+    color: var(--creme2); opacity:0.5; margin-top:2.5rem;
+    animation: fadeUp 1s ease 0.45s both; position:relative;
+  }
+
+  .hero-divider {
+    width:1px; height:60px;
+    background: linear-gradient(180deg, transparent, var(--ouro), transparent);
+    margin: 2.5rem auto; animation: fadeUp 1s ease 0.6s both;
+  }
+
+  .hero-cta {
+    display:flex; gap:1.2rem; flex-wrap:wrap; justify-content:center;
+    animation: fadeUp 1s ease 0.75s both; position:relative;
+  }
+
+  .btn {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.25em; text-transform:uppercase;
+    text-decoration:none; padding: 1rem 2.8rem;
+    transition: all 0.35s ease; cursor:pointer; border:none;
+    display:inline-block;
+  }
+  .btn-gold {
+    background: var(--ouro); color: var(--verde);
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  }
+  .btn-gold:hover { background: var(--ouro2); transform: translateY(-2px); }
+  .btn-ghost {
+    background: transparent; color: var(--creme);
+    border: 1px solid rgba(200,168,75,0.4);
+  }
+  .btn-ghost:hover { border-color: var(--ouro); color: var(--ouro); transform: translateY(-2px); }
+
+  .hero-scroll {
+    position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
+    color:var(--ouro); opacity:0.4; font-family:'Tenor Sans',sans-serif;
+    font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase;
+    display:flex; flex-direction:column; align-items:center; gap:0.5rem;
+    animation: pulse 2.5s ease infinite;
+  }
+  .hero-scroll span { width:1px; height:40px; background: linear-gradient(180deg, var(--ouro), transparent); }
+
+  /* ── FAIXA PREÇOS ── */
+  .faixa-preco {
+    background: var(--ouro);
+    padding: 0;
+    overflow: hidden;
+  }
+  .faixa-preco-inner {
+    display: flex;
+    align-items: stretch;
+    max-width: 100%;
+  }
+  .faixa-preco-label {
+    background: var(--verde);
+    padding: 1.8rem 3.5rem;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--ouro); white-space: nowrap;
+    display: flex; align-items: center;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0% 100%);
+    padding-right: 4rem;
+  }
+  .faixa-preco-content {
+    flex: 1; padding: 1.5rem 4rem;
+    display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;
+  }
+  .faixa-item {
+    text-align: center;
+    color: var(--verde);
+  }
+  .faixa-item-dia {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    opacity: 0.7; display: block; margin-bottom: 0.2rem;
+  }
+  .faixa-item-valor {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700; line-height: 1;
+    display: block;
+  }
+  .faixa-item-tipo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem; font-style: italic; opacity: 0.75;
+    display: block; margin-top: 0.1rem;
+  }
+  .faixa-sep { width: 1px; height: 50px; background: rgba(23,36,21,0.15); flex-shrink: 0; }
+
+  /* ── SOBRE ── */
+  .sobre {
+    display: grid; grid-template-columns: 1fr 1fr; min-height: 75vh;
+  }
+  .sobre-texto {
+    background: var(--creme); padding: 9rem 6rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .tag {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ouro); margin-bottom: 1.8rem;
+  }
+  .sobre-texto h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600; line-height: 1.15;
+    color: var(--verde); margin-bottom: 1.8rem;
+  }
+  .sobre-texto h2 em { font-style: italic; color: var(--marrom2); }
+  .sobre-texto p {
+    font-size: 1.2rem; line-height: 1.9;
+    color: var(--marrom); margin-bottom: 1rem;
+    font-weight: 300;
+  }
+  .sobre-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3.5rem; padding-top: 2.5rem;
+    border-top: 1px solid var(--creme2);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 700;
+    color: var(--verde); display: block; line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--marrom2); margin-top: 0.4rem; display: block;
+  }
+  .sobre-deco {
+    background: var(--verde2);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sobre-deco-inner {
+    width: 100%; height: 100%;
+    background: linear-gradient(145deg, rgba(200,168,75,0.12) 0%, transparent 60%);
+    display: flex; align-items: center; justify-content: center; padding: 5rem;
+  }
+  .pullquote {
+    text-align: center; color: var(--creme);
+    border: 1px solid rgba(200,168,75,0.2);
+    padding: 3rem;
+    position: relative;
+  }
+  .pullquote::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10rem; line-height: 0.6; color: var(--ouro);
+    opacity: 0.2; position: absolute; top: 2rem; left: 2rem;
+  }
+  .pullquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem; font-style: italic; line-height: 1.6;
+    color: var(--creme);
+  }
+  .pullquote-autor {
+    margin-top: 1.5rem; font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ouro); opacity: 0.7;
+  }
+
+  /* ── COMO FUNCIONA ── */
+  .como-funciona {
+    background: var(--verde);
+    padding: 9rem 4rem;
+    text-align: center;
+  }
+  .sec-header { margin-bottom: 5rem; }
+  .sec-header .tag { color: var(--ouro); }
+  .sec-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 300; color: var(--creme); line-height: 1.1;
+  }
+  .sec-header h2 em { font-style: italic; font-weight: 600; color: var(--ouro); }
+  .orn { display:flex; align-items:center; justify-content:center; gap:1rem; margin:1.5rem 0; }
+  .orn::before, .orn::after {
+    content:''; flex:1; max-width:80px; height:1px;
+    background: linear-gradient(90deg, transparent, var(--ouro));
+  }
+  .orn::after { background: linear-gradient(90deg, var(--ouro), transparent); }
+  .orn-diamond { width:7px; height:7px; background:var(--ouro); transform:rotate(45deg); }
+
+  .modalidades {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; max-width: 900px; margin: 0 auto;
+    background: rgba(200,168,75,0.12);
+  }
+  .modalidade-card {
+    background: rgba(23,36,21,0.97); padding: 4rem 3.5rem;
+    text-align: left; position: relative; overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  .modalidade-card::after {
+    content:''; position:absolute; bottom:0; left:0;
+    width:0; height:2px; background:var(--ouro);
+    transition: width 0.5s ease;
+  }
+  .modalidade-card:hover::after { width:100%; }
+  .modalidade-card:hover { background: rgba(35,58,32,0.98); }
+  .modalidade-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; font-weight: 700; font-style: italic;
+    color: var(--ouro); opacity: 0.12; line-height: 1;
+    margin-bottom: 0.5rem; display: block;
+  }
+  .modalidade-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem; font-weight: 600; color: var(--creme);
+    margin-bottom: 0.6rem;
+  }
+  .modalidade-card .modalidade-desc {
+    font-size: 1.05rem; color: var(--creme2); opacity: 0.65;
+    line-height: 1.7; margin-bottom: 2rem; font-weight: 300;
+  }
+  .price-list { border-top: 1px solid rgba(200,168,75,0.15); padding-top: 1.5rem; }
+  .price-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.45rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 1.05rem;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .dia { color: var(--creme2); opacity: 0.65; }
+  .price-row .valor {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 700; color: var(--ouro);
+  }
+  .price-row-destaque .dia { color: var(--creme); opacity: 1; }
+  .price-row-destaque .valor { color: var(--ouro2); }
+
+  /* ── CARDÁPIO ── */
+  .cardapio {
+    background: var(--off-white); padding: 9rem 4rem;
+  }
+  .cardapio .sec-header h2 { color: var(--verde); }
+  .cardapio .sec-header .tag { color: var(--ouro); }
+  .cardapio .orn-diamond { background: var(--ouro); }
+  .cardapio .orn::before { background: linear-gradient(90deg, transparent, var(--ouro)); }
+  .cardapio .orn::after { background: linear-gradient(90deg, var(--ouro), transparent); }
+
+  .menu-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5px; max-width: 1100px; margin: 0 auto;
+    background: rgba(200,168,75,0.12);
+  }
+  .menu-card {
+    background: var(--off-white); padding: 2.8rem 2.5rem;
+    position: relative; transition: all 0.3s ease; overflow: hidden;
+  }
+  .menu-card::before {
+    content:''; position:absolute; left:0; top:0;
+    width:3px; height:0; background:var(--ouro); transition:height 0.4s;
+  }
+  .menu-card:hover::before { height:100%; }
+  .menu-card:hover { background: #f0e8d8; transform: translateX(5px); }
+  .menu-card-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .menu-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 600; color: var(--verde);
+    margin-bottom: 0.5rem;
+  }
+  .menu-card p { font-size: 1rem; color: var(--marrom2); line-height: 1.65; }
+  .menu-card .price-tag {
+    display: inline-block; margin-top: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 700; color: var(--ouro);
+  }
+
+  /* ── SOBREMESAS DESTAQUE ── */
+  .sobremesas-banner {
+    background: var(--marrom);
+    padding: 6rem 4rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .sobremesas-banner::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(200,168,75,0.1) 0%, transparent 70%);
+  }
+  .sobremesas-banner .tag { color: var(--ouro2); }
+  .sobremesas-banner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--creme); font-weight: 300;
+    margin-bottom: 1rem; line-height: 1.1;
+  }
+  .sobremesas-banner h2 em { font-style:italic; font-weight:700; color:var(--ouro); }
+  .sobremesas-banner p {
+    font-size: 1.2rem; color: var(--creme2); opacity: 0.7;
+    max-width: 580px; margin: 0 auto 3rem; line-height: 1.8; font-weight: 300;
+  }
+  .doces-grid {
+    display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;
+    max-width: 900px; margin: 0 auto 3rem; position: relative;
+  }
+  .doce-chip {
+    background: rgba(200,168,75,0.12);
+    border: 1px solid rgba(200,168,75,0.25);
+    color: var(--creme); padding: 0.8rem 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic;
+    transition: all 0.3s;
+  }
+  .doce-chip:hover {
+    background: rgba(200,168,75,0.22); border-color: var(--ouro);
+    transform: translateY(-2px);
+  }
+  .doce-preco {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--ouro);
+    margin-top: 0.5rem; position: relative; display: inline-block;
+  }
+  .doce-preco-label {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--creme2); opacity: 0.5; display: block; margin-top: 0.3rem;
+  }
+
+  /* ── IFOOD ── */
+  .ifood-strip {
+    background: var(--verde); padding: 3.5rem 4rem;
+    display: flex; align-items: center; justify-content: center; gap: 3rem;
+    flex-wrap: wrap; text-align: center;
+  }
+  .ifood-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-style: italic; color: var(--creme2); opacity: 0.75;
+  }
+  .ifood-badge {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: #ea1d2c; color: #fff; padding: 0.9rem 2.2rem;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .ifood-badge:hover { background: #c8141f; transform: translateY(-2px); }
+  .ifood-badge svg { width:22px; height:22px; fill: white; flex-shrink: 0; }
+
+  /* ── DIFERENCIAIS ── */
+  .diferenciais { background: var(--creme); padding: 9rem 4rem; }
+  .diferenciais .sec-header h2 { color: var(--verde); }
+  .diff-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2rem; max-width: 1100px; margin: 0 auto;
+  }
+  .diff-item {
+    text-align: center; padding: 3rem 2rem;
+    border: 1px solid var(--creme2); transition: all 0.3s;
+    position: relative;
+  }
+  .diff-item:hover {
+    border-color: var(--ouro);
+    box-shadow: 0 12px 40px rgba(200,168,75,0.1);
+    transform: translateY(-5px);
+    background: var(--off-white);
+  }
+  .diff-icon { font-size: 2.2rem; margin-bottom: 1.2rem; display: block; }
+  .diff-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600; color: var(--verde);
+    margin-bottom: 0.6rem;
+  }
+  .diff-item p { font-size: 0.98rem; color: var(--marrom2); line-height: 1.65; }
+
+  /* ── AVALIAÇÕES ── */
+  .avaliacoes { background: var(--verde2); padding: 9rem 4rem; text-align: center; }
+  .avaliacoes .sec-header h2 { color: var(--creme); }
+  .rating-badge {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--ouro); color: var(--verde);
+    padding: 0.7rem 2rem; margin-bottom: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 700;
+  }
+  .rating-badge span {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.72rem; font-weight: 400; opacity: 0.75; letter-spacing: 0.1em;
+  }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+  }
+  .review-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.2rem; text-align: left; transition: all 0.3s;
+  }
+  .review-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+  }
+  .stars { color: var(--ouro); letter-spacing: 3px; margin-bottom: 1rem; }
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic;
+    color: var(--creme); line-height: 1.7; margin-bottom: 1.3rem;
+  }
+  .review-autor {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ouro); opacity: 0.75;
+  }
+
+  /* ── CONTATO ── */
+  .contato { background: var(--verde); padding: 9rem 4rem; }
+  .contato-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+  }
+  .contato-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
+    color: var(--creme); margin-bottom: 2.5rem; line-height: 1.2;
+  }
+  .contato-info h2 em { font-style: italic; font-weight: 600; color: var(--ouro); }
+  .contato-item {
+    display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.8rem;
+  }
+  .c-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .c-label {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ouro); display: block; margin-bottom: 0.25rem;
+  }
+  .c-val { font-size: 1.1rem; color: var(--creme); line-height: 1.6; }
+  .horarios-box {
+    background: rgba(200,168,75,0.07);
+    border: 1px solid rgba(200,168,75,0.18);
+    padding: 2.2rem; margin-top: 2rem;
+  }
+  .horarios-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--ouro); margin-bottom: 1.2rem; font-size: 1.15rem;
+  }
+  .h-row {
+    display: flex; justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--creme2); font-size: 1rem;
+  }
+  .h-row:last-child { border-bottom: none; }
+  .h-row span:last-child { color: var(--ouro2); font-weight: 600; }
+  .social-links { display: flex; gap: 0.8rem; margin-top: 2rem; flex-wrap: wrap; }
+  .social-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(200,168,75,0.25);
+    color: var(--creme2); text-decoration: none;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .social-link:hover { border-color: var(--ouro); color: var(--ouro); }
+  .mapa-box {
+    background: rgba(42,66,40,0.4);
+    border: 1px solid rgba(200,168,75,0.18);
+    padding: 3.5rem; text-align: center;
+    display: flex; flex-direction: column; gap: 1.5rem; align-items: center;
+  }
+  .mapa-emoji { font-size: 3.5rem; }
+  .mapa-end {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-style: italic; color: var(--creme); line-height: 1.6;
+  }
+  .mapa-city {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ouro); opacity: 0.65;
+  }
+  .mapa-extras {
+    font-size: 0.85rem; color: var(--creme2); opacity: 0.4;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0d160d; padding: 2.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-style: italic; font-weight: 700;
+    color: var(--ouro); letter-spacing: 0.05em;
+  }
+  .footer-txt {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    color: var(--creme); opacity: 0.25;
+  }
+
+  /* ── WHATSAPP FAB ── */
+  .whatsapp-fab {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 300;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25d366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    text-decoration: none; transition: all 0.3s ease;
+    animation: fabPop 0.5s cubic-bezier(.34,1.56,.64,1) 1.5s both;
+  }
+  .whatsapp-fab:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.55);
+  }
+  .whatsapp-fab svg { width: 30px; height: 30px; fill: white; }
+  .whatsapp-fab-label {
+    position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+    background: var(--verde); color: var(--creme);
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.5rem 1rem; white-space: nowrap;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  .whatsapp-fab:hover .whatsapp-fab-label { opacity: 1; }
+  @keyframes fabPop {
+    from { opacity:0; transform: scale(0.5); }
+    to   { opacity:1; transform: scale(1); }
+  }
+
+  /* ── GALERIA ── */
+  .galeria {
+    background: var(--verde); padding: 9rem 4rem;
+  }
+  .galeria .sec-header h2 { color: var(--creme); }
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 3px; max-width: 1100px; margin: 0 auto;
+  }
+  .galeria-item {
+    position: relative; overflow: hidden; cursor: pointer;
+    background: var(--verde2);
+  }
+  .galeria-item:first-child { grid-row: 1 / 3; }
+  .galeria-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease; display: block;
+  }
+  .galeria-item:hover img { transform: scale(1.06); }
+  .galeria-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.8rem;
+    background: linear-gradient(135deg, rgba(200,168,75,0.08) 0%, rgba(42,66,40,0.5) 100%);
+    border: 1px solid rgba(200,168,75,0.1);
+    transition: all 0.4s;
+  }
+  .galeria-item:hover .galeria-placeholder {
+    background: linear-gradient(135deg, rgba(200,168,75,0.15) 0%, rgba(42,66,40,0.7) 100%);
+    border-color: rgba(200,168,75,0.25);
+  }
+  .galeria-placeholder-icon { font-size: 2.5rem; opacity: 0.4; }
+  .galeria-placeholder-txt {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ouro); opacity: 0.4; text-align: center; padding: 0 1rem;
+  }
+  .galeria-nota {
+    text-align: center; margin-top: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic;
+    color: var(--creme2); opacity: 0.4;
+  }
+  @media (max-width: 768px) {
+    .galeria-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 200px);
+    }
+    .galeria-item:first-child { grid-row: 1; }
+  }
+
+  /* ── EVENTOS ── */
+  .eventos {
+    background: var(--creme); padding: 9rem 4rem;
+  }
+  .eventos .sec-header h2 { color: var(--verde); }
+  .eventos-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .eventos-texto h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 600;
+    color: var(--verde); margin-bottom: 1rem; line-height: 1.2;
+  }
+  .eventos-texto h3 em { font-style: italic; color: var(--marrom2); }
+  .eventos-texto p {
+    font-size: 1.15rem; line-height: 1.85; color: var(--marrom);
+    margin-bottom: 1rem; font-weight: 300;
+  }
+  .eventos-lista {
+    list-style: none; margin: 1.5rem 0 2rem;
+  }
+  .eventos-lista li {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    padding: 0.6rem 0; border-bottom: 1px solid var(--creme2);
+    font-size: 1.1rem; color: var(--marrom);
+  }
+  .eventos-lista li:last-child { border-bottom: none; }
+  .eventos-lista li::before {
+    content: '◆'; color: var(--ouro); font-size: 0.5rem;
+    margin-top: 0.5rem; flex-shrink: 0;
+  }
+  .eventos-cards {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .evento-card {
+    background: var(--off-white); border: 1px solid var(--creme2);
+    padding: 1.8rem 2rem; transition: all 0.3s;
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+  .evento-card:hover {
+    border-color: var(--ouro);
+    box-shadow: 0 6px 25px rgba(200,168,75,0.1);
+    transform: translateX(4px);
+  }
+  .evento-icon { font-size: 2rem; flex-shrink: 0; }
+  .evento-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 600; color: var(--verde);
+    margin-bottom: 0.25rem;
+  }
+  .evento-card p { font-size: 0.95rem; color: var(--marrom2); line-height: 1.5; }
+  @media (max-width: 900px) {
+    .eventos-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
+  /* ── REVEAL ANIMATION ── */
+  .reveal { opacity:0; transform: translateY(28px); transition: all 0.8s cubic-bezier(.22,.61,.36,1); }
+  .reveal.visible { opacity:1; transform: translateY(0); }
+
+  /* ── KEYFRAMES ── */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(35px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  @keyframes fadeSlideDown {
+    from { opacity:0; transform: translateY(-15px); }
+    to   { opacity:0.85; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity:0.35; }
+    50%       { opacity:0.65; }
+  }
+
+  .nav-hamburger { display: none; }
+  .nav-mobile { display: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .sobre { grid-template-columns: 1fr; }
+    .sobre-texto { padding: 6rem 2.5rem; }
+    .sobre-deco { min-height: 320px; }
+    .modalidades { grid-template-columns: 1fr !important; }
+    .contato-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .faixa-preco-inner { flex-direction: column; }
+    .faixa-preco-label { clip-path: none; padding: 1.2rem 2rem; }
+    .faixa-preco-content { padding: 1.5rem 2rem; gap: 2rem; justify-content: center; }
+    .eventos-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .galeria-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 200px);
+    }
+    .galeria-item:first-child { grid-row: 1; }
+  }
+
+  @media (max-width: 768px) {
+    /* Nav */
+    nav { padding: 1rem 1.5rem; }
+    nav.solid { padding: 0.8rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-mobile { display: flex; }
+
+    /* Menu hamburguer */
+    .nav-hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--ouro); transition: all 0.3s;
+    }
+    .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .nav-mobile {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(23,36,21,0.98); z-index: 199;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 2.5rem;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .nav-mobile.open { opacity: 1; pointer-events: all; }
+    .nav-mobile a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-style: italic; font-weight: 300;
+      color: var(--creme); text-decoration: none; letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+    .nav-mobile a:hover { color: var(--ouro); }
+
+    /* Hero */
+    .hero { padding: 5rem 1.5rem 4rem; }
+    .hero h1 { font-size: clamp(3.5rem, 15vw, 5.5rem); }
+    .hero-tagline { font-size: 0.65rem; letter-spacing: 0.2em; }
+    .hero-eyebrow { font-size: 0.6rem; gap: 0.8rem; }
+    .hero-eyebrow::before, .hero-eyebrow::after { width: 30px; }
+
+    /* Faixa preço */
+    .faixa-preco-content { flex-direction: column; align-items: center; gap: 1.5rem; padding: 1.5rem; }
+    .faixa-sep { width: 60px; height: 1px; }
+    .faixa-item-valor { font-size: 1.4rem; }
+
+    /* Sobre */
+    .sobre-texto { padding: 5rem 1.5rem; }
+    .sobre-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-num { font-size: 2rem; }
+
+    /* Seções gerais */
+    .como-funciona, .cardapio, .diferenciais,
+    .avaliacoes, .contato, .sobremesas-banner,
+    .galeria, .eventos { padding: 5rem 1.5rem; }
+
+    /* Modalidades */
+    .modalidade-card { padding: 2.5rem 2rem; }
+
+    /* Cardápio */
+    .menu-grid { grid-template-columns: 1fr; }
+
+    /* Doces */
+    .doces-grid { gap: 0.8rem; }
+    .doce-chip { font-size: 1rem; padding: 0.6rem 1.2rem; }
+
+    /* iFood */
+    .ifood-strip { padding: 2.5rem 1.5rem; gap: 1.5rem; flex-direction: column; }
+    .ifood-text { font-size: 1.1rem; }
+
+    /* Galeria */
+    .galeria-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 180px);
+    }
+    .galeria-item:first-child { grid-row: 1; }
+
+    /* Eventos */
+    .eventos-lista li { font-size: 1rem; }
+    .evento-card { padding: 1.5rem; }
+
+    /* Diferenciais */
+    .diff-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .diff-item { padding: 2rem 1rem; }
+
+    /* Avaliações */
+    .reviews-grid { grid-template-columns: 1fr; }
+    .rating-badge { font-size: 1.2rem; }
+
+    /* Contato */
+    .contato-info h2 { font-size: 2rem; }
+    .horarios-box { padding: 1.5rem; }
+    .social-links { flex-direction: column; }
+    .social-link { justify-content: center; }
+
+    /* Footer */
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; gap: 0.8rem; }
+    footer > div { text-align: center !important; }
+
+    /* WhatsApp FAB */
+    .whatsapp-fab { bottom: 1.5rem; right: 1.5rem; width: 52px; height: 52px; }
+    .whatsapp-fab svg { width: 26px; height: 26px; }
+    .whatsapp-fab-label { display: none; }
+  }
+
+  @media (max-width: 420px) {
+    .hero h1 { font-size: 3.2rem; }
+    .sobre-stats { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .hero-cta { flex-direction: column; align-items: center; }
+    .btn { width: 100%; text-align: center; }
+    .faixa-preco-label { font-size: 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/5511933704986?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Restaurante%20Casarão." target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Falar pelo WhatsApp">
+  <span class="whatsapp-fab-label">Falar no WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.854L.057 23.885a.5.5 0 0 0 .615.61l6.219-1.625A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.944 9.944 0 0 1-5.12-1.413l-.368-.216-3.812.998 1.016-3.705-.239-.382A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-brand">Casarão</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#como-funciona">Preços</a></li>
+    <li><a href="#cardapio">Cardápio</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#eventos">Eventos</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" aria-label="Abrir menu de navegação" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MENU MOBILE -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#sobre" class="mobile-link">Sobre</a>
+  <a href="#como-funciona" class="mobile-link">Preços</a>
+  <a href="#cardapio" class="mobile-link">Cardápio</a>
+  <a href="#galeria" class="mobile-link">Galeria</a>
+  <a href="#eventos" class="mobile-link">Eventos</a>
+  <a href="#avaliacoes" class="mobile-link">Avaliações</a>
+  <a href="#contato" class="mobile-link">Contato</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-lines">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="200" x2="1440" y2="200" stroke="#c8a84b" stroke-width="0.5"/>
+      <line x1="0" y1="600" x2="1440" y2="600" stroke="#c8a84b" stroke-width="0.5"/>
+      <line x1="200" y1="0" x2="200" y2="800" stroke="#c8a84b" stroke-width="0.5"/>
+      <line x1="1240" y1="0" x2="1240" y2="800" stroke="#c8a84b" stroke-width="0.5"/>
+      <rect x="180" y="180" width="1080" height="440" stroke="#c8a84b" stroke-width="0.5" fill="none"/>
+      <circle cx="720" cy="400" r="250" stroke="#c8a84b" stroke-width="0.3" fill="none"/>
+      <circle cx="720" cy="400" r="350" stroke="#c8a84b" stroke-width="0.2" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="hero-eyebrow">Desde 2002 · Bragança Paulista</div>
+  <h1>
+    Restaurante
+    <strong>Casarão</strong>
+  </h1>
+  <p class="hero-tagline">Fogão a lenha · Casarão de 1922 · Comida mineira de verdade</p>
+  <div class="hero-divider"></div>
+  <div class="hero-cta">
+    <a href="#como-funciona" class="btn btn-gold">Ver Preços</a>
+    <a href="#contato" class="btn btn-ghost">Como Chegar</a>
+  </div>
+  <div class="hero-scroll">Descer <span></span></div>
+</section>
+
+<!-- FAIXA DE PREÇOS RÁPIDA -->
+<div class="faixa-preco">
+  <div class="faixa-preco-inner">
+    <div class="faixa-preco-label">Almoço hoje</div>
+    <div class="faixa-preco-content">
+      <div class="faixa-item">
+        <span class="faixa-item-dia">Quilo · Seg a Sex</span>
+        <span class="faixa-item-valor">R$ 108,90<small style="font-size:0.6em;opacity:.6">/kg</small></span>
+        <span class="faixa-item-tipo">Sáb e Dom R$ 118,90/kg</span>
+      </div>
+      <div class="faixa-sep"></div>
+      <div class="faixa-item">
+        <span class="faixa-item-dia">À Vontade · Seg – Sex</span>
+        <span class="faixa-item-valor">R$ 69,90</span>
+        <span class="faixa-item-tipo">Buffet livre · por pessoa</span>
+      </div>
+      <div class="faixa-sep"></div>
+      <div class="faixa-item">
+        <span class="faixa-item-dia">À Vontade · Sábado</span>
+        <span class="faixa-item-valor">R$ 79,90</span>
+        <span class="faixa-item-tipo">Buffet livre · por pessoa</span>
+      </div>
+      <div class="faixa-sep"></div>
+      <div class="faixa-item">
+        <span class="faixa-item-dia">À Vontade · Domingo</span>
+        <span class="faixa-item-valor">R$ 89,90</span>
+        <span class="faixa-item-tipo">Buffet livre · por pessoa</span>
+      </div>
+      <div class="faixa-sep"></div>
+      <div class="faixa-item">
+        <span class="faixa-item-dia">Jantar · Monte um Prato</span>
+        <span class="faixa-item-valor">R$ 39,90</span>
+        <span class="faixa-item-tipo">À vontade R$ 59,90 · Quilo R$ 108,90</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-texto reveal">
+    <div class="tag">Nossa história</div>
+    <h2>Um casarão com<br><em>alma e história</em></h2>
+    <p>Instalado em um imóvel histórico de 1922, que já pertenceu aos fazendeiros do café da família Leme, o Casarão preserva a elegância das antigas casas de fazenda — pé direito alto, decoração rústica e um aconchego que poucos lugares conseguem reproduzir.</p>
+    <p>Desde 2002, servimos comida mineira tradicional preparada no fogão a lenha, com ingredientes frescos e receitas que reconfortam de verdade. Aqui não tem cardápio: é à vontade ou no quilo, do jeito que a comida boa merece.</p>
+    <div class="sobre-stats">
+      <div>
+        <span class="stat-num">+20</span>
+        <span class="stat-label">Anos de história</span>
+      </div>
+      <div>
+        <span class="stat-num">4,5★</span>
+        <span class="stat-label">Nota Google</span>
+      </div>
+      <div>
+        <span class="stat-num">1,6mil</span>
+        <span class="stat-label">Avaliações</span>
+      </div>
+    </div>
+  </div>
+  <div class="sobre-deco">
+    <div class="sobre-deco-inner">
+      <div class="pullquote reveal">
+        <p>O ambiente é maravilhoso, transmite paz. Com total certeza voltaremos!</p>
+        <div class="pullquote-autor">— Cliente Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona" id="como-funciona">
+  <div class="sec-header reveal">
+    <div class="tag">Como funciona</div>
+    <h2>Almoço e jantar —<br><em>do seu jeito</em></h2>
+    <div class="orn"><div class="orn-diamond"></div></div>
+    <p style="font-size:1.1rem; color:var(--creme2); opacity:0.6; max-width:500px; margin:0 auto; font-weight:300; line-height:1.8;">
+      Sem cardápio à la carte. Só buffet — do jeito simples e farto que a comida mineira pede.
+    </p>
+  </div>
+
+  <div class="modalidades reveal" style="grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); max-width:1100px;">
+    <div class="modalidade-card">
+      <span class="modalidade-num">01</span>
+      <h3>Almoço · Por Quilo</h3>
+      <p class="modalidade-desc">Monte seu prato e pague pelo peso. Disponível todos os dias.</p>
+      <div class="price-list">
+        <div class="price-row">
+          <span class="dia">Segunda a Sexta</span>
+          <span class="valor">R$ 108,90 / kg</span>
+        </div>
+        <div class="price-row price-row-destaque">
+          <span class="dia">Sábado e Domingo</span>
+          <span class="valor">R$ 118,90 / kg</span>
+        </div>
+      </div>
+    </div>
+    <div class="modalidade-card">
+      <span class="modalidade-num">02</span>
+      <h3>Almoço · À Vontade</h3>
+      <p class="modalidade-desc">Repita quantas vezes quiser. O preço varia conforme o dia da semana.</p>
+      <div class="price-list">
+        <div class="price-row">
+          <span class="dia">Segunda a Sexta</span>
+          <span class="valor">R$ 69,90</span>
+        </div>
+        <div class="price-row">
+          <span class="dia">Sábado</span>
+          <span class="valor">R$ 79,90</span>
+        </div>
+        <div class="price-row price-row-destaque">
+          <span class="dia">Domingo</span>
+          <span class="valor">R$ 89,90</span>
+        </div>
+        <div class="price-row" style="font-size:0.85rem; color:var(--creme2); opacity:0.45; border:none; padding-top:0.8rem;">
+          <span>Por pessoa</span>
+        </div>
+      </div>
+    </div>
+    <div class="modalidade-card">
+      <span class="modalidade-num">03</span>
+      <h3>Jantar · Três Opções</h3>
+      <p class="modalidade-desc">À noite você escolhe como quer comer. Três formatos, todos os dias (exceto domingo).</p>
+      <div class="price-list">
+        <div class="price-row">
+          <span class="dia">Monte um Prato</span>
+          <span class="valor">R$ 39,90</span>
+        </div>
+        <div class="price-row">
+          <span class="dia">À Vontade</span>
+          <span class="valor">R$ 59,90</span>
+        </div>
+        <div class="price-row price-row-destaque">
+          <span class="dia">Por Quilo</span>
+          <span class="valor">R$ 108,90 / kg</span>
+        </div>
+        <div class="price-row" style="font-size:0.85rem; color:var(--creme2); opacity:0.45; border:none; padding-top:0.8rem;">
+          <span>Por pessoa · Seg a Sáb a partir das 18h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<section class="cardapio" id="cardapio">
+  <div class="sec-header reveal" style="text-align:center;">
+    <div class="tag">O que servimos</div>
+    <h2 style="color:var(--verde);">Do fogão a lenha<br><em style="color:var(--marrom2);">pra sua mesa</em></h2>
+    <div class="orn">
+      <div class="orn-diamond" style="background:var(--ouro);"></div>
+    </div>
+    <p style="font-size:1.1rem; color:var(--marrom2); max-width:500px; margin:0 auto; font-weight:300; line-height:1.8;">
+      Pratos preparados com carinho, ingredientes frescos e as receitas do interior de Minas
+    </p>
+  </div>
+  <div class="menu-grid reveal">
+    <div class="menu-card">
+      <span class="menu-card-icon">🥘</span>
+      <h3>Pratos Mineiros</h3>
+      <p>Feijão tropeiro, tutu à mineira, frango caipira, rabada com polenta cremosa e muito mais do coração de Minas</p>
+    </div>
+    <div class="menu-card">
+      <span class="menu-card-icon">🥗</span>
+      <h3>Saladas & Acompanhamentos</h3>
+      <p>Ampla variedade de saladas frescas e legumes preparados. Ótimas opções para vegetarianos</p>
+    </div>
+    <div class="menu-card">
+      <span class="menu-card-icon">🐟</span>
+      <h3>Pratos Especiais</h3>
+      <p>Salmão com camarão, abóbora com carne seca e salsinha, e os pratos da casa que mudam conforme a semana</p>
+    </div>
+    <div class="menu-card">
+      <span class="menu-card-icon">🍹</span>
+      <h3>Bebidas</h3>
+      <p>Sucos naturais, chá de abacaxi com canela, cachaça com ervas e café de cortesia para fechar com chave de ouro</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBREMESAS BANNER -->
+<section class="sobremesas-banner">
+  <div class="sec-header reveal">
+    <div class="tag">Para adoçar o final</div>
+    <h2>Doces <em>artesanais</em></h2>
+    <div class="orn" style="--ouro:#c8a84b;">
+      <div class="orn-diamond" style="background:var(--ouro);"></div>
+    </div>
+    <p>Tudo feito aqui dentro, com receitas próprias. Não estão incluídas no preço do buffet — cada doce é cobrado à parte, por apenas R$&nbsp;15,00.</p>
+  </div>
+  <div class="doces-grid reveal">
+    <span class="doce-chip">Mousse de Chocolate</span>
+    <span class="doce-chip">Mousse de Maracujá</span>
+    <span class="doce-chip">Mousse de Maracujá c/ Chocolate</span>
+    <span class="doce-chip">Mousse de Limão</span>
+    <span class="doce-chip">Mousse de Limão c/ Chocolate</span>
+    <span class="doce-chip">Gelatinas</span>
+    <span class="doce-chip">Figo</span>
+    <span class="doce-chip">Ambrosia</span>
+    <span class="doce-chip">& muito mais…</span>
+  </div>
+  <div class="reveal">
+    <span class="doce-preco">R$ 15,00</span>
+    <span class="doce-preco-label">cada sobremesa</span>
+  </div>
+</section>
+
+<!-- IFOOD -->
+<div class="ifood-strip" id="ifood">
+  <p class="ifood-text">Não fazemos delivery próprio —<br>pedidos pelo iFood com toda a comodidade</p>
+  <a href="https://www.ifood.com.br/delivery/braganca-paulista-sp/restaurante-casarao-centro/37c0a09b-db69-4a76-9584-a3a8d0e64f5d" target="_blank" rel="noopener" class="ifood-badge">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4zm-2 22h-4V18h4v8zm6 0h-4v-6h4v6zm0-8h-4v-2h4v2z"/></svg>
+    Pedir no iFood
+  </a>
+</div>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="sec-header reveal" style="text-align:center; margin-bottom:3rem;">
+    <div class="tag" style="color:var(--ouro);">Conheça o espaço</div>
+    <h2>O Casarão por <em style="color:var(--ouro);">dentro</em></h2>
+    <div class="orn"><div class="orn-diamond"></div></div>
+  </div>
+  <div class="galeria-grid reveal">
+    <div class="galeria-item">
+      <div class="galeria-placeholder">
+        <span class="galeria-placeholder-icon">🏛️</span>
+        <span class="galeria-placeholder-txt">Salão principal<br>— foto do ambiente</span>
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder">
+        <span class="galeria-placeholder-icon">🍲</span>
+        <span class="galeria-placeholder-txt">Buffet<br>— foto dos pratos</span>
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder">
+        <span class="galeria-placeholder-icon">🌿</span>
+        <span class="galeria-placeholder-txt">Varanda<br>— vista da praça</span>
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder">
+        <span class="galeria-placeholder-icon">🔥</span>
+        <span class="galeria-placeholder-txt">Fogão a lenha<br>— cozinha</span>
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder">
+        <span class="galeria-placeholder-icon">🍮</span>
+        <span class="galeria-placeholder-txt">Sobremesas<br>— doces artesanais</span>
+      </div>
+    </div>
+  </div>
+  <p class="galeria-nota">Fotos a inserir pelo proprietário — substitua os blocos acima pelas imagens reais do restaurante</p>
+</section>
+
+<!-- EVENTOS -->
+<section class="eventos" id="eventos">
+  <div class="sec-header reveal" style="text-align:center; margin-bottom:4rem;">
+    <div class="tag">Celebre conosco</div>
+    <h2 style="color:var(--verde);">Eventos & <em style="color:var(--marrom2);">Reservas</em></h2>
+    <div class="orn"><div class="orn-diamond" style="background:var(--ouro);"></div></div>
+  </div>
+  <div class="eventos-inner">
+    <div class="eventos-texto reveal">
+      <h3>O espaço perfeito para <em>momentos especiais</em></h3>
+      <p>O Casarão tem capacidade e estrutura para receber grupos, confraternizações, aniversários, almoços corporativos e qualquer celebração que mereça um cenário histórico e uma comida de verdade.</p>
+      <p>Nosso salão comporta grupos de todos os tamanhos. Para eventos maiores, entre em contato para consultar disponibilidade e condições especiais.</p>
+      <ul class="eventos-lista">
+        <li>Confraternizações de empresa</li>
+        <li>Aniversários e datas comemorativas</li>
+        <li>Almoços e jantares em grupo</li>
+        <li>Reuniões e encontros familiares</li>
+        <li>Eventos corporativos</li>
+      </ul>
+      <a href="https://wa.me/5511933704986?text=Olá!%20Gostaria%20de%20informações%20sobre%20eventos%20e%20reservas%20no%20Casarão." target="_blank" rel="noopener" class="btn btn-gold">
+        Consultar disponibilidade
+      </a>
+    </div>
+    <div class="eventos-cards reveal">
+      <div class="evento-card">
+        <span class="evento-icon">🎂</span>
+        <div>
+          <h4>Aniversários</h4>
+          <p>Comemore com estilo em um casarão histórico. Ambiente único para uma data única.</p>
+        </div>
+      </div>
+      <div class="evento-card">
+        <span class="evento-icon">🏢</span>
+        <div>
+          <h4>Eventos Corporativos</h4>
+          <p>Almoços de negócio e confraternizações com a qualidade e o aconchego do Casarão.</p>
+        </div>
+      </div>
+      <div class="evento-card">
+        <span class="evento-icon">👨‍👩‍👧‍👦</span>
+        <div>
+          <h4>Grupos & Famílias</h4>
+          <p>Espaço amplo para receber toda a família ou grupo de amigos com conforto e fartura.</p>
+        </div>
+      </div>
+      <div class="evento-card">
+        <span class="evento-icon">📋</span>
+        <div>
+          <h4>Reservas</h4>
+          <p>Garanta sua mesa — especialmente aos finais de semana. Reserve pelo WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais" id="diferenciais">
+  <div class="sec-header reveal" style="text-align:center;">
+    <div class="tag">Por que o Casarão</div>
+    <h2 style="color:var(--verde);">O que faz a<br><em style="color:var(--marrom2);">diferença aqui</em></h2>
+    <div class="orn"><div class="orn-diamond" style="background:var(--ouro);"></div></div>
+  </div>
+  <div class="diff-grid reveal">
+    <div class="diff-item">
+      <span class="diff-icon">🔥</span>
+      <h3>Fogão a Lenha</h3>
+      <p>A comida é preparada e mantida quente no fogão a lenha — sabor e aroma que forno elétrico nenhum imita</p>
+    </div>
+    <div class="diff-item">
+      <span class="diff-icon">🏛️</span>
+      <h3>Casarão de 1922</h3>
+      <p>Imóvel histórico da família Leme, antigo solar dos barões do café. Pé direito alto, decoração rústica preservada</p>
+    </div>
+    <div class="diff-item">
+      <span class="diff-icon">🌿</span>
+      <h3>Ingredientes Frescos</h3>
+      <p>Comprometidos com os melhores ingredientes, preparação artesanal e receitas que respeitam a tradição mineira</p>
+    </div>
+    <div class="diff-item">
+      <span class="diff-icon">🌳</span>
+      <h3>Vista para a Praça</h3>
+      <p>Varanda com mesas na frente, com vista para a Praça José Bonifácio. Uma pausa gostosa no coração da cidade</p>
+    </div>
+    <div class="diff-item">
+      <span class="diff-icon">👨‍👩‍👧</span>
+      <h3>Para Toda a Família</h3>
+      <p>Ambiente acolhedor e espaçoso, perfeito para grupos, famílias e aquele almoço de domingo especial</p>
+    </div>
+    <div class="diff-item">
+      <span class="diff-icon">📍</span>
+      <h3>Localização Central</h3>
+      <p>No coração de Bragança Paulista, ao lado da Igreja Matriz. Fácil de chegar, difícil de esquecer</p>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section class="avaliacoes" id="avaliacoes">
+  <div class="sec-header reveal">
+    <div class="tag" style="color:var(--ouro);">O que dizem de nós</div>
+    <div class="rating-badge">4,5 ★ <span>1.600+ avaliações no Google</span></div>
+    <h2>Avaliações dos Clientes</h2>
+    <div class="orn"><div class="orn-diamond"></div></div>
+  </div>
+  <div class="reviews-grid reveal">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Que lugar lindo! Minha mãe ficou sabendo do Casarão por recomendação e adoramos! Fomos num domingo, muita variedade de comida para todos os gostos. A comida no fogão a lenha é espetacular! O ambiente transmite paz. Com total certeza voltaremos!</p>
+      <div class="review-autor">— Cliente Google</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Lugar discreto visto da rua, mas por dentro é um casarão antigo lindo! Comida boa no estilo self-service. Tem sobremesa caseira também! Super recomendo.</p>
+      <div class="review-autor">— Cliente Google</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Variedade de comida todos os dias e além do verdadeiro sabor caseiro. Adoro! Parabéns a todos do restaurante — atendimento, qualidade e amor em tudo ali.</p>
+      <div class="review-autor">— Avaliação Google</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Lugar lindo, me senti em outro século. Adoro coisas antigas, e além da comida caseira maravilhosa o lugar é bem rústico com vários móveis e detalhes antigos. Incrível!</p>
+      <div class="review-autor">— Avaliação Google</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">O imóvel é lindo, carismático, com design dos tempos dos barões do café. Surpreendi com a beleza do local. Fica na praça central — comida mineira de verdade, lugar agradável e ótimo atendimento.</p>
+      <div class="review-autor">— Viajante Tripadvisor</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">O casarão é antigo, bem preservado e tem linda decoração, com banheiros muito limpos. A comida saborosa, bem ao estilo caseira — parte do bom sabor se deve ao fogão a lenha. O pessoal é simpático e prestativo.</p>
+      <div class="review-autor">— Cliente Google</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="contato-inner">
+    <div class="contato-info reveal">
+      <div class="tag" style="color:var(--ouro);">Venha nos visitar</div>
+      <h2>Informações<br><em>& Contato</em></h2>
+      <div class="contato-item">
+        <span class="c-icon">📍</span>
+        <div>
+          <span class="c-label">Endereço</span>
+          <span class="c-val">Praça José Bonifácio, 110<br>Centro – Bragança Paulista, SP<br>CEP 12900-130</span>
+        </div>
+      </div>
+      <div class="contato-item">
+        <span class="c-icon">📞</span>
+        <div>
+          <span class="c-label">Telefone</span>
+          <span class="c-val">(11) 4032-3514</span>
+        </div>
+      </div>
+      <div class="contato-item">
+        <span class="c-icon">📱</span>
+        <div>
+          <span class="c-label">WhatsApp</span>
+          <a href="https://wa.me/5511933704986?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener" class="c-val" style="text-decoration:none; color:var(--creme); transition:color 0.3s;" onmouseover="this.style.color='#25d366'" onmouseout="this.style.color='var(--creme)'">(11) 9 3370-4986 →</a>
+        </div>
+      </div>
+      <div class="horarios-box">
+        <h3>🕐 Horários de Funcionamento</h3>
+        <div class="h-row"><span>Segunda a Sábado · Almoço</span><span>11h às 15h30</span></div>
+        <div class="h-row"><span>Segunda a Sábado · Jantar</span><span>18h às 21h30</span></div>
+        <div class="h-row"><span>Domingo</span><span>Só almoço · 11h às 15h30</span></div>
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/restaurantecasaraobp" target="_blank" rel="noopener noreferrer" class="social-link">📸 @restaurantecasaraobp</a>
+        <a href="https://www.facebook.com/RestauranteCasaraoBraganca" target="_blank" rel="noopener noreferrer" class="social-link">👍 /RestauranteCasaraoBraganca</a>
+        <a href="https://restaurantecasaraobp.com.br" target="_blank" rel="noopener noreferrer" class="social-link">🌐 restaurantecasaraobp.com.br</a>
+      </div>
+    </div>
+    <div class="mapa-box reveal" style="padding:0; overflow:hidden; gap:0;">
+    <iframe
+  src="https://www.google.com/maps?q=Restaurante%20Casarão%20Bragança%20Paulista&output=embed"
+  width="100%" height="320"
+  style="border:0; display:block;"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="Localização Restaurante Casarão">
+</iframe>
+      <div style="padding:2rem; display:flex; flex-direction:column; gap:1rem; align-items:center; text-align:center;">
+        <p class="mapa-end">Praça José Bonifácio, 110<br>ao lado da Igreja Matriz</p>
+        <p class="mapa-city">Centro · Bragança Paulista – SP</p>
+        <a href="https://maps.google.com/?q=Restaurante+Casarão+Praça+José+Bonifácio+110+Bragança+Paulista" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:0.5rem;">
+          Abrir no Google Maps
+        </a>
+        <p class="mapa-extras">🚌 Terminal de ônibus a 639m &nbsp;·&nbsp; 🅿️ Estacionamento a 145m</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Restaurante Casarão</div>
+  <div style="display:flex; flex-direction:column; gap:0.3rem; text-align:center;">
+    <div class="footer-txt">Praça José Bonifácio, 110 · Centro · Bragança Paulista – SP · CEP 12900-130</div>
+    <div class="footer-txt">(11) 4032-3514 &nbsp;·&nbsp; WhatsApp (11) 9 3370-4986</div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:0.3rem; text-align:right;">
+    <div class="footer-txt">© 2026 Restaurante Casarão. Todos os direitos reservados.</div>
+    <!-- CNPJ: inserir quando disponível -->
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMobile.classList.toggle('open');
+    document.body.style.overflow = navMobile.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMobile.classList.remove('open');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+    });
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 90);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
