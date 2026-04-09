@@ -381,7 +381,7 @@
   }
   .menu-card:hover::before { height:100%; }
   .menu-card:hover { background: #f0e8d8; transform: translateX(5px); }
-  .menu-card-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .menu-card-icon { width: 1.8rem; height: 1.8rem; margin-bottom: 1rem; display: block; color: var(--ouro); stroke: var(--ouro); }
   .menu-card h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.35rem; font-weight: 600; color: var(--verde);
@@ -482,7 +482,7 @@
     transform: translateY(-5px);
     background: var(--off-white);
   }
-  .diff-icon { font-size: 2.2rem; margin-bottom: 1.2rem; display: block; }
+  .diff-icon { width: 2rem; height: 2rem; margin-bottom: 1.2rem; display: block; margin-left: auto; margin-right: auto; color: var(--ouro); stroke: var(--ouro); }
   .diff-item h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.25rem; font-weight: 600; color: var(--verde);
@@ -544,7 +544,7 @@
   .contato-item {
     display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.8rem;
   }
-  .c-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .c-icon { width: 1.3rem; height: 1.3rem; flex-shrink: 0; margin-top: 0.15rem; color: var(--ouro); stroke: var(--ouro); }
   .c-label {
     font-family: 'Tenor Sans', sans-serif;
     font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
@@ -745,7 +745,7 @@
     box-shadow: 0 6px 25px rgba(200,168,75,0.1);
     transform: translateX(4px);
   }
-  .evento-icon { font-size: 2rem; flex-shrink: 0; }
+  .evento-icon { width: 2rem; height: 2rem; flex-shrink: 0; color: var(--ouro); stroke: var(--ouro); }
   .evento-card h4 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem; font-weight: 600; color: var(--verde);
@@ -935,6 +935,7 @@
     <li><a href="#eventos">Eventos</a></li>
     <li><a href="#avaliacoes">Avaliações</a></li>
     <li><a href="#contato">Contato</a></li>
+    <li><a href="#ifood" style="color:var(--ouro); opacity:1;">iFood</a></li>
   </ul>
   <div class="nav-hamburger" id="hamburger" aria-label="Abrir menu de navegação" role="button" tabindex="0">
     <span></span><span></span><span></span>
@@ -950,6 +951,7 @@
   <a href="#eventos" class="mobile-link">Eventos</a>
   <a href="#avaliacoes" class="mobile-link">Avaliações</a>
   <a href="#contato" class="mobile-link">Contato</a>
+  <a href="#ifood" class="mobile-link" style="color:var(--ouro);">iFood</a>
 </div>
 
 <!-- HERO -->
@@ -1138,22 +1140,22 @@
   </div>
   <div class="menu-grid reveal">
     <div class="menu-card">
-      <span class="menu-card-icon">🥘</span>
+      <svg class="menu-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11H4a2 2 0 0 0 0 4h2"/><path d="M18 11h2a2 2 0 0 1 0 4h-2"/><rect x="6" y="7" width="12" height="13" rx="2"/><path d="M9 7V5M15 7V5"/></svg>
       <h3>Pratos Mineiros</h3>
       <p>Feijão tropeiro, tutu à mineira, frango caipira, rabada com polenta cremosa e muito mais do coração de Minas</p>
     </div>
     <div class="menu-card">
-      <span class="menu-card-icon">🥗</span>
+      <svg class="menu-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
       <h3>Saladas & Acompanhamentos</h3>
       <p>Ampla variedade de saladas frescas e legumes preparados. Ótimas opções para vegetarianos</p>
     </div>
     <div class="menu-card">
-      <span class="menu-card-icon">🐟</span>
+      <svg class="menu-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a3 3 0 0 1 0 6M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4zm4-7v3M10 1v3M14 1v3"/></svg>
       <h3>Pratos Especiais</h3>
       <p>Salmão com camarão, abóbora com carne seca e salsinha, e os pratos da casa que mudam conforme a semana</p>
     </div>
     <div class="menu-card">
-      <span class="menu-card-icon">🍹</span>
+      <svg class="menu-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></svg>
       <h3>Bebidas</h3>
       <p>Sucos naturais, chá de abacaxi com canela, cachaça com ervas e café de cortesia para fechar com chave de ouro</p>
     </div>
@@ -1206,31 +1208,31 @@
   <div class="galeria-grid reveal">
     <div class="galeria-item">
       <div class="galeria-placeholder">
-        <span class="galeria-placeholder-icon">🏛️</span>
+        <svg style="width:2.5rem;height:2.5rem;opacity:0.4;stroke:var(--ouro);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21V11h6v10"/></svg>
         <span class="galeria-placeholder-txt">Salão principal<br>— foto do ambiente</span>
       </div>
     </div>
     <div class="galeria-item">
       <div class="galeria-placeholder">
-        <span class="galeria-placeholder-icon">🍲</span>
+        <svg style="width:2.5rem;height:2.5rem;opacity:0.4;stroke:var(--ouro);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11H4a2 2 0 0 0 0 4h2"/><path d="M18 11h2a2 2 0 0 1 0 4h-2"/><rect x="6" y="7" width="12" height="13" rx="2"/><path d="M9 7V5M15 7V5"/></svg>
         <span class="galeria-placeholder-txt">Buffet<br>— foto dos pratos</span>
       </div>
     </div>
     <div class="galeria-item">
       <div class="galeria-placeholder">
-        <span class="galeria-placeholder-icon">🌿</span>
+        <svg style="width:2.5rem;height:2.5rem;opacity:0.4;stroke:var(--ouro);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
         <span class="galeria-placeholder-txt">Varanda<br>— vista da praça</span>
       </div>
     </div>
     <div class="galeria-item">
       <div class="galeria-placeholder">
-        <span class="galeria-placeholder-icon">🔥</span>
+        <svg style="width:2.5rem;height:2.5rem;opacity:0.4;stroke:var(--ouro);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-3.58 9-8 0-3.87-2.5-6.5-5-8.5-.5 2.5-2 4-3 4.5C12 8 10 5.5 10 3c-3 2.5-5 5.5-5 11 0 4.42 3.13 8 7 8z"/></svg>
         <span class="galeria-placeholder-txt">Fogão a lenha<br>— cozinha</span>
       </div>
     </div>
     <div class="galeria-item">
       <div class="galeria-placeholder">
-        <span class="galeria-placeholder-icon">🍮</span>
+        <svg style="width:2.5rem;height:2.5rem;opacity:0.4;stroke:var(--ouro);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2 1 2 1"/><path d="M2 21h20M7 8v1M12 8v1M17 8v1"/></svg>
         <span class="galeria-placeholder-txt">Sobremesas<br>— doces artesanais</span>
       </div>
     </div>
@@ -1263,28 +1265,28 @@
     </div>
     <div class="eventos-cards reveal">
       <div class="evento-card">
-        <span class="evento-icon">🎂</span>
+        <svg class="evento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2 1 2 1"/><path d="M2 21h20M7 8v1M12 8v1M17 8v1M7 4a1 1 0 0 0-1 1v2h2V5a1 1 0 0 0-1-1zM12 4a1 1 0 0 0-1 1v2h2V5a1 1 0 0 0-1-1zM17 4a1 1 0 0 0-1 1v2h2V5a1 1 0 0 0-1-1z"/></svg>
         <div>
           <h4>Aniversários</h4>
           <p>Comemore com estilo em um casarão histórico. Ambiente único para uma data única.</p>
         </div>
       </div>
       <div class="evento-card">
-        <span class="evento-icon">🏢</span>
+        <svg class="evento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v.01M2 12h20"/></svg>
         <div>
           <h4>Eventos Corporativos</h4>
           <p>Almoços de negócio e confraternizações com a qualidade e o aconchego do Casarão.</p>
         </div>
       </div>
       <div class="evento-card">
-        <span class="evento-icon">👨‍👩‍👧‍👦</span>
+        <svg class="evento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <div>
           <h4>Grupos & Famílias</h4>
           <p>Espaço amplo para receber toda a família ou grupo de amigos com conforto e fartura.</p>
         </div>
       </div>
       <div class="evento-card">
-        <span class="evento-icon">📋</span>
+        <svg class="evento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></svg>
         <div>
           <h4>Reservas</h4>
           <p>Garanta sua mesa — especialmente aos finais de semana. Reserve pelo WhatsApp.</p>
@@ -1303,32 +1305,32 @@
   </div>
   <div class="diff-grid reveal">
     <div class="diff-item">
-      <span class="diff-icon">🔥</span>
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-3.58 9-8 0-3.87-2.5-6.5-5-8.5-.5 2.5-2 4-3 4.5C12 8 10 5.5 10 3c-3 2.5-5 5.5-5 11 0 4.42 3.13 8 7 8z"/></svg>
       <h3>Fogão a Lenha</h3>
       <p>A comida é preparada e mantida quente no fogão a lenha — sabor e aroma que forno elétrico nenhum imita</p>
     </div>
     <div class="diff-item">
-      <span class="diff-icon">🏛️</span>
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21V11h6v10"/></svg>
       <h3>Casarão de 1922</h3>
       <p>Imóvel histórico da família Leme, antigo solar dos barões do café. Pé direito alto, decoração rústica preservada</p>
     </div>
     <div class="diff-item">
-      <span class="diff-icon">🌿</span>
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
       <h3>Ingredientes Frescos</h3>
       <p>Comprometidos com os melhores ingredientes, preparação artesanal e receitas que respeitam a tradição mineira</p>
     </div>
     <div class="diff-item">
-      <span class="diff-icon">🌳</span>
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14c1.5-1 3-2.5 3-5a5 5 0 0 0-10 0c0 2.5 1.5 4 3 5v4h4v-4z"/><path d="M10 19h8"/></svg>
       <h3>Vista para a Praça</h3>
       <p>Varanda com mesas na frente, com vista para a Praça José Bonifácio. Uma pausa gostosa no coração da cidade</p>
     </div>
     <div class="diff-item">
-      <span class="diff-icon">👨‍👩‍👧</span>
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <h3>Para Toda a Família</h3>
       <p>Ambiente acolhedor e espaçoso, perfeito para grupos, famílias e aquele almoço de domingo especial</p>
     </div>
     <div class="diff-item">
-      <span class="diff-icon">📍</span>
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
       <h3>Localização Central</h3>
       <p>No coração de Bragança Paulista, ao lado da Igreja Matriz. Fácil de chegar, difícil de esquecer</p>
     </div>
@@ -1384,36 +1386,45 @@
       <div class="tag" style="color:var(--ouro);">Venha nos visitar</div>
       <h2>Informações<br><em>& Contato</em></h2>
       <div class="contato-item">
-        <span class="c-icon">📍</span>
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <div>
           <span class="c-label">Endereço</span>
           <span class="c-val">Praça José Bonifácio, 110<br>Centro – Bragança Paulista, SP<br>CEP 12900-130</span>
         </div>
       </div>
       <div class="contato-item">
-        <span class="c-icon">📞</span>
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1.09h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 7 7l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <div>
           <span class="c-label">Telefone</span>
           <span class="c-val">(11) 4032-3514</span>
         </div>
       </div>
       <div class="contato-item">
-        <span class="c-icon">📱</span>
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         <div>
           <span class="c-label">WhatsApp</span>
           <a href="https://wa.me/5511933704986?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener" class="c-val" style="text-decoration:none; color:var(--creme); transition:color 0.3s;" onmouseover="this.style.color='#25d366'" onmouseout="this.style.color='var(--creme)'">(11) 9 3370-4986 →</a>
         </div>
       </div>
       <div class="horarios-box">
-        <h3>🕐 Horários de Funcionamento</h3>
+        <h3 style="display:flex;align-items:center;gap:0.6rem;"><svg style="width:1.1rem;height:1.1rem;stroke:var(--ouro);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Horários de Funcionamento</h3>
         <div class="h-row"><span>Segunda a Sábado · Almoço</span><span>11h às 15h30</span></div>
         <div class="h-row"><span>Segunda a Sábado · Jantar</span><span>18h às 21h30</span></div>
         <div class="h-row"><span>Domingo</span><span>Só almoço · 11h às 15h30</span></div>
       </div>
       <div class="social-links">
-        <a href="https://www.instagram.com/restaurantecasaraobp" target="_blank" rel="noopener noreferrer" class="social-link">📸 @restaurantecasaraobp</a>
-        <a href="https://www.facebook.com/RestauranteCasaraoBraganca" target="_blank" rel="noopener noreferrer" class="social-link">👍 /RestauranteCasaraoBraganca</a>
-        <a href="https://restaurantecasaraobp.com.br" target="_blank" rel="noopener noreferrer" class="social-link">🌐 restaurantecasaraobp.com.br</a>
+        <a href="https://www.instagram.com/restaurantecasaraobp" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg style="width:1rem;height:1rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @restaurantecasaraobp
+        </a>
+        <a href="https://www.facebook.com/RestauranteCasaraoBraganca" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg style="width:1rem;height:1rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          /RestauranteCasaraoBraganca
+        </a>
+        <a href="https://restaurantecasaraobp.com.br" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg style="width:1rem;height:1rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          restaurantecasaraobp.com.br
+        </a>
       </div>
     </div>
     <div class="mapa-box reveal" style="padding:0; overflow:hidden; gap:0;">
@@ -1431,7 +1442,7 @@
         <a href="https://maps.google.com/?q=Restaurante+Casarão+Praça+José+Bonifácio+110+Bragança+Paulista" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:0.5rem;">
           Abrir no Google Maps
         </a>
-        <p class="mapa-extras">🚌 Terminal de ônibus a 639m &nbsp;·&nbsp; 🅿️ Estacionamento a 145m</p>
+        <p class="mapa-extras">Terminal de ônibus a 639m &nbsp;·&nbsp; Estacionamento a 145m</p>
       </div>
     </div>
   </div>
